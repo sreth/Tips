@@ -29,3 +29,6 @@ server key and for your remote password.
 sshfs <username>@<ipaddress>:/remotepath ~/remoteserv
 
 
+
+Credit goes to:
+http://www.howtogeek.com/howto/ubuntu/how-to-mount-a-remote-folder-using-ssh-on-ubuntu/

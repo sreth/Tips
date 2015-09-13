@@ -1,0 +1,4 @@
+1. Run a VM
+2. Run ‘esxtop’ in ESX, type ‘m’ for memory view, find the VM, find the GID column, record GID
+3. In ESX run ‘vsish -e set /sched/groups/$GID/memAllocationInMB max=<memLimitInMB>’
+4. Observing balloon status in the above esxtop memory view.

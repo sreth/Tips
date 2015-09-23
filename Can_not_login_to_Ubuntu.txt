@@ -1,0 +1,2 @@
+Your home directory is probably full so increase it or remove unnecessary
+things.

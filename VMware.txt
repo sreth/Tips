@@ -1,0 +1,14 @@
+1. How to register a VM from within ESX
+
+vim-cmd solo/registervm `pwd`/.vmx_file
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2. How to set memory limit of a VM in ESX
+
+- Run a VM
+- Run ‘esxtop’ in ESX, type ‘m’ for memory view, find the VM, find the GID column, record GID
+- In ESX run ‘vsish -e set /sched/groups/$GID/memAllocationInMB max=<memLimitInMB>’
+- Observing balloon status in the above esxtop memory view
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------

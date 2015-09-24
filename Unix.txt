@@ -1,3 +1,5 @@
+1. How to mount a remote folder using SSH on Ubuntu:
+
 First we’ll install the module:
 
 sudo apt-get install sshfs
@@ -28,8 +30,16 @@ server key and for your remote password.
 
 sshfs <username>@<ipaddress>:/remotepath ~/remoteserv
 
-Example: 
+Example:
 sshfs root@bos1-floor11-dhcp117-36:/vmfs/volumes/4e0e1364-1c8b3a91-eb2c-0030487cf7a2/Results ~/Desktop/Results/
 
-Credit goes to:
-http://www.howtogeek.com/howto/ubuntu/how-to-mount-a-remote-folder-using-ssh-on-ubuntu/
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2. Cannot login to Ubuntu:
+
+Home directory is probably full so increase it or remove unnecessary files.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3
+

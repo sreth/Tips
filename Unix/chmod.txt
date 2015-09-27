@@ -1,0 +1,86 @@
+--- Unix file permissions ---
+
+File permissions allow you to grant or deny access to your files and directories. There are three types of permissions:
+
+r - read
+w - write
+x - execute
+
+These permissions mean different things for files and directories.
+
+For files:
+
+read - you can open and read the file, you can also copy it.
+write - you can modify the file
+execute - you can execute (run) the file if it is executable (like a program or a command)
+For directories:
+
+read - you can ls the directory and see the contents.
+write - you can make and remove files in that directory.
+execute - you can cd into that directory.
+Use the ls -l command to see the file permissions for your files and directories. Here's an example:
+
+$ ls -l
+total 188
+drwx------  jk users  4096 2008-10-24 11:30 cs21/
+drwx------  jk users  4096 2007-10-01 12:24 mail/
+drwxr-xr-x  jk users  4096 2008-06-05 10:33 public/
+-rw-------  jk users 83623 2008-09-10 08:29 turing.pdf
+-rw-r--r--  jk users  9134 2008-01-24 16:26 unix-by-example
+The first column above is the file permissions (drwx------ or -rw-r--r--), the second is the owner of the files and directories (jk), and the third column is the group (users).
+
+For the file permissions, the first letter is either a "d" or a "-", meaning it's a directory or a file. The next three characters (e.g., rwx) are the permissions for the owner of the file. Then comes the group permissions (e.g., everyone in the users group), and finally permissions for everyone else. Here are some examples:
+
+drwx------ : directory only accessible by owner
+drwxr-xr-x : directory anyone can access
+-rwxr-xr-x : file anyone can read and execute
+-rw-r----- : file only people in the group can read
+
+To see what groups you are in, run the groups command.
+
+--- Changing permissions on a file/directory ---
+
+Use the chmod (CHange MODe) to change the file permissions. The chmod command can use numbers:
+
+4 - read
+2 - write
+1 - execute
+The reason these aren't 1,2,3 is because they need to add up to a unique number depending on what combination of them you use.
+
+So, to give read and write permission ...
+
+read + write = 4 + 2 = 6
+
+or execute and read permission ...
+
+execute + read = 1 + 4 =5
+
+or just execute permission ...
+
+execute = 1
+
+or all permissions ...
+
+read + write + execute = 4 + 2 + 1 = 7
+
+The chmod command takes three numbers for three permissions:
+
+owner, group, all users (in that order)
+
+The basic chmod command goes:
+
+$ chmod ### directory/filename
+
+So, if you wanted to give read access to all (-rw-r--r--)...
+
+$ chmod 644 filename
+
+To make a file readable, writable, and executable by only you ...
+
+$ chmod 700 filename
+
+To make a file readable and executable by you and your group, but only readable by everyone else ...
+
+$ chmod 554 filename
+
+chmod can also use letters: u for user (owner), g for group, o for other, and a for all (u, g, and o). So you could do chmod g+r file to add read access for the group. For more information about chmod, see the man page (man chmod).

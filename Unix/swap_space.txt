@@ -1,47 +1,4 @@
-1. How to mount a remote folder using SSH on Ubuntu
-
-First we’ll install the module:
-
-sudo apt-get install sshfs
-
-Now we will use the modprobe command to load it
-
-sudo modprobe fuse
-
-We’ll need to set up some permissions in order to access the utilities. Replace
-<username> with your username.
-
-sudo adduser <username> fuse
-
-sudo chown root:fuse /dev/fuse
-
-sudo chmod +x /dev/fusermount
-
-Since we’ve added ourselves to a user group, we need to logout and back in at
-this point before we continue.
-
-Now we’ll create a directory to mount the remote folder in. I chose to create
-it in my home directory and call it remoteserv.
-
-mkdir ~/remoteserv
-
-Now we have the command to actually mount it. You’ll be prompted to save the
-server key and for your remote password.
-
-sshfs <username>@<ipaddress>:/remotepath ~/remoteserv
-
-Example:
-sshfs root@bos1-floor11-dhcp117-36:/vmfs/volumes/4e0e1364-1c8b3a91-eb2c-0030487cf7a2/Results ~/Desktop/Results/
-
---------------------------------------------------------------------------------------------------------------------------------------------------------
-
-2. Cannot login to Ubuntu (when login, it just flashes and then it goes back to the login screen)
-
-Home directory is probably full so increase it or remove unnecessary files.
-
---------------------------------------------------------------------------------------------------------------------------------------------------------
-
-3. Check the system for swap information
+1. Check the system for swap information
 
 We can see if the system has any configured swap by typing:
 
@@ -64,7 +21,7 @@ As you can see above, our total swap space in the system is "0". This matches wh
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
-4. Check available space on the hard drive partition
+2. Check available space on the hard drive partition
 
 The typical way of allocating space for swap is to use a separate partition devoted to the task. However, altering the partitioning scheme is not always possible. We can just as easily create a swap file that resides on an existing partition.
 
@@ -85,7 +42,7 @@ Although there are many opinions about the appropriate size of a swap space, it 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
-5. Create a swap file
+3. Create a swap file
 
 ---------- The traditional, slow Way ----------
 
@@ -135,7 +92,7 @@ As you can see, our file is created with the correct amount of space set aside.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
-6. Enabling the swap file
+4. Enabling the swap file
 
 Right now, our file is created, but our system does not know that this is supposed to be used for swap. We need to tell our system to format this file as swap and then enable it.
 
@@ -182,7 +139,7 @@ Our swap has been set up successfully and our operating system will begin to use
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
-7. Make the swap file permanent
+5. Make the swap file permanent
 
 We have our swap file enabled, but when we reboot, the server will not automatically enable the file. We can change that though by modifying the fstab file.
 
@@ -198,7 +155,7 @@ Save and close the file when you are finished.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
-8. Removing a swap file
+6. Removing a swap file
 
 To remove a swap file:
 
@@ -216,4 +173,3 @@ Sometimes, you need to reboot your system first before the swap file can be remo
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
-9. 

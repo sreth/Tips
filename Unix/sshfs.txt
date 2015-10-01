@@ -35,7 +35,24 @@ sshfs root@bos1-floor11-dhcp117-36:/vmfs/volumes/4e0e1364-1c8b3a91-eb2c-0030487c
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
-2. Cannot login to Ubuntu (when login, it just flashes and then it goes back to the login screen)
+2. Connection Reset By Peer
+
+Ever tried to ssh to your server and seen an error like this?
+
+ssh_exchange_identification: read: Connection reset by peer
+
+The first thing you should always do if SSH fails is try again with 
+verbose logging on. Just try something like this:
+
+ssh username@address.com -vv
+
+If the problem is on your client's side, some sort of error should 
+show up in that log. If you aren't seeing anything useful in there, 
+the problem may be with your server.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3. Cannot login to Ubuntu (when login, it just flashes and then it goes back to the login screen)
 
 Home directory is probably full so increase it or remove unnecessary files.
 

@@ -46,6 +46,8 @@ verbose logging on. Just try something like this:
 
 ssh username@address.com -vv
 
+Example: ssh root@bos1-floor11-dhcp117-36 -vv
+
 If the problem is on your client's side, some sort of error should 
 show up in that log. If you aren't seeing anything useful in there, 
 the problem may be with your server.

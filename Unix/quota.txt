@@ -1,0 +1,7 @@
+Check disk quota
+
+quota -s
+
+Disk quota exceeded:
+rm -r .mozilla
+rm -r .cache/mozilla

@@ -12,3 +12,7 @@ vim-cmd solo/registervm `pwd`/.vmx_file
 - Observing balloon status in the above esxtop memory view
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3. How to mount DBC directory on remote host filesystem?
+
+esxcfg-nas -a -o 10.17.187.119 -s /dbc/vmc-dbc302 vmc-dbc302

@@ -4,7 +4,20 @@ vim-cmd solo/registervm `pwd`/.vmx_file
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
-2. How to set memory limit of a VM in ESX
+2. How to register a VM from within ESX
+
+vim-cmd vmsvc/unregister vmid
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3. How to get a listing of VMs on ESX
+
+esxcli vm process list
+vim-cmd vmsvc/getallvms
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+4. How to set memory limit of a VM in ESX
 
 - Run a VM
 - Run ‘esxtop’ in ESX, type ‘m’ for memory view, find the VM, find the GID column, record GID
@@ -13,6 +26,6 @@ vim-cmd solo/registervm `pwd`/.vmx_file
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
-3. How to mount DBC directory on remote host filesystem?
+5. How to mount DBC directory on remote host filesystem?
 
 esxcfg-nas -a -o 10.17.187.119 -s /dbc/vmc-dbc302 vmc-dbc302

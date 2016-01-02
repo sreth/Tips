@@ -5,3 +5,18 @@ quota -s
 Disk quota exceeded:
 rm -r .mozilla
 rm -r .cache/mozilla
+
+
+Cannot login to GUI with valid password
+
+This looks like the .Xauthority file is corrupted. Try this in a tty:
+
+sudo mv .Xauthority .Xauthority_backup
+
+Then restart lightdm and try to log in again:
+
+sudo service lightdm restart
+
+If that was not the cause, restore the file to its previous state:
+
+sudo mv .Xauthority_backup .Xauthority

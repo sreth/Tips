@@ -1,0 +1,10 @@
+In order to "zip" a directory, the correct command would be
+
+tar -zcvf archive.tar.gz directory/ 
+
+This will tell tar to c (create) an archive from the files in directory (tar is recursive by default), compress it using the z (gzip) algorithm, store the output as a f (file) named archive.tar.gz, and v (verbosely) list all the files it adds to the archive.
+
+To decompress and unpack the archive into the current directory you would use
+
+tar -zxvf archive.tar.gz 
+
